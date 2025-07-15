@@ -43,7 +43,7 @@ const createWebSocketUrl = (symbol: CoinSymbol): string => {
 
 export const useCryptoWebSocket = (symbol: CoinSymbol): UseCryptoWebSocketReturn => {
   const { state, dispatch } = useCrypto();  // contextten state ve dispatch fonksiyonlarını alıyoruz
-  const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null);  //yeniden bağlanma için bir timeout referansı oluşturduk
+  const reconnectTimeoutRef = useRef<number | null>(null);  //yeniden bağlanma için bir timeout referansı oluşturduk
   const prevSymbolRef = useRef<CoinSymbol>(symbol);
   const lastDataTimeRef = useRef<number>(Date.now()); // Son veri gelme zamanı
 
